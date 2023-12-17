@@ -6,12 +6,11 @@ import (
 	"os"
 
 	"github.com/larb26656/game-shop-tutorial/config"
+	"github.com/larb26656/game-shop-tutorial/pkg/database"
 )
 
 func main() {
 	ctx := context.Background()
-	_ = ctx
-
 	// Initialize config
 
 	cfg := config.LoadConfig(func() string {
@@ -22,5 +21,9 @@ func main() {
 		return os.Args[1]
 	}())
 
-	log.Println(cfg)
+	// Connect to database
+	db := database.DbCon(ctx, &cfg)
+	defer db.Disconnect(ctx)
+
+	log.Println(db)
 }
