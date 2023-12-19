@@ -7,6 +7,6 @@ type (
 	}
 )
 
-func NewMiddlewareRepositoryService() MiddlewareRepositoryService {
+func NewMiddlewareRepository() MiddlewareRepositoryService {
 	return &middlewareRepository{}
 }

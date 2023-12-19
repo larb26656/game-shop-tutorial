@@ -7,6 +7,7 @@ import (
 
 	"github.com/larb26656/game-shop-tutorial/config"
 	"github.com/larb26656/game-shop-tutorial/pkg/database"
+	"github.com/larb26656/game-shop-tutorial/server"
 )
 
 func main() {
@@ -25,5 +26,6 @@ func main() {
 	db := database.DbCon(ctx, &cfg)
 	defer db.Disconnect(ctx)
 
-	log.Println(db)
+	// Start server
+	server.Start(ctx, &cfg, db)
 }

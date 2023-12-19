@@ -14,6 +14,6 @@ type (
 	}
 )
 
-func NewAuthHandler(cfg *config.Config, authUsecase authUsecase.AuthUsecaseService) AuthHttpandlerService {
+func NewAuthHttpHandler(cfg *config.Config, authUsecase authUsecase.AuthUsecaseService) AuthHttpandlerService {
 	return &authHttpHandler{cfg, authUsecase}
 }
