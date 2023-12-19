@@ -1,9 +1,9 @@
 package models
 
 type (
-	Paginate struct {
-		String string `query:"start" validate:"max=64"`
-		Limit int `query:"limit" validate:"required,min=2,max=10"`
+	PaginateReq struct {
+		Start string `query:"start" validate:"max=64"`
+		Limit int    `query:"limit" validate:"required,min=2,max=10"`
 	}
 
 	PaginateRes struct {
