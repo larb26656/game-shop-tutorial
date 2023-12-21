@@ -1,0 +1,27 @@
+syntax = "proto3";
+
+// Package name
+option go_package = "github.com/larb26656/game-shop-tutorial";
+
+// Structures
+message AccessTokenSearchReq {
+    string accessToken = 1;
+}
+
+message AccessTokenSearchRes {
+    bool isValid = 1;
+}
+
+message RolesCountReq {
+
+}
+
+message RolesCountRes {
+    int64 count = 1;
+}
+
+// Methods
+service AuthGrpcService {
+    rpc CredentialSearch(AccessTokenSearchReq) returns (AccessTokenSearchRes);
+    rpc RolesCount(RolesCountReq) returns (RolesCountRes);
+}
